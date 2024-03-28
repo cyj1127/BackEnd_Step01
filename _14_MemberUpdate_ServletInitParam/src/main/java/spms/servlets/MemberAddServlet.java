@@ -77,12 +77,16 @@ public class MemberAddServlet extends HttpServlet{
 			PrintWriter out = resp.getWriter();
 			out.println("<html><head><title>회원등록결과</title></head>");
 			//아래와 같은 코드이다. 1초 후에 Refresh
-			out.println("<meta http-equiv='Refresh' content='1;url=list'>");
+//			out.println("<meta http-equiv='Refresh' content='1;url=list'>");
 			out.println("<body>");
 			out.println("<p>등록 성공입니다</p>");
 			out.println("</body></html>");
 			
-			//Refresh대신 Redirect
+			//Refresh대신 Redirect를 처리한다.
+			//시간을 지체 하지 않고, 바로 다시 상대경로 이동
+			//서버-> 브라우저 한테 명령
+			resp.sendRedirect("list");
+			
 			
 			//1초 후에 화면이 Refresh된다.
 //			resp.addHeader("Refresh", "1;url=list");
