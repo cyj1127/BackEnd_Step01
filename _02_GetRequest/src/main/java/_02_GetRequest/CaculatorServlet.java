@@ -1,4 +1,4 @@
-package main.java._02_GetRequest;
+package _02_GetRequest;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
+@WebServlet("/calculator")
 public class CaculatorServlet extends HttpServlet {
 	
 	private Hashtable<String, Operator> operatorTable = new Hashtable<>();
